@@ -63,7 +63,7 @@ log_action() {
                 return
             fi
         else
-            read -p "Terminate process $pid ($proc_name)? (Y/N): "confirm
+            read -p "Terminate process $pid ($proc_name)? (Y/N): " confirm
             if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
                 echo "Termination cancelled."
                 return
@@ -109,3 +109,27 @@ manage_logs() {
     fi
 }
 
+## Main menu ##
+while true; do 
+echo "***** Wellcome to IoT Device Manager!!! *****"
+echo "(1). Display CPU and memory usage"
+echo "(2). List top 10 memory-consuming processes"
+echo "(3). Terminate a process"
+echo "(4). Manage log files (50Mb < archive)"
+echo "(5). Bye (exit)"
+
+read -p "Choose an option [1-5]: " opt
+case $opt in
+    1) show_cpu_mem ;;
+    2) list_top_procs ;;
+    3) terminate_proc ;;
+    4) manage_logs ;;
+    5) read -p "Are you sure you want to exit? (Y/N): " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            echo "Bye!!!"
+            log_action "Exited system"
+            exit 0
+        fi ;;
+    *) echo "Invalid option." ;;
+    esac
+done

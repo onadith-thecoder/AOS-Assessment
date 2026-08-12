@@ -29,3 +29,47 @@ log_action() {
         log_action "Listed top 10 memory processes"
     }
 
+    #function - Terminate a selected process only after confirmation
+    terminate_proc() {
+        read -p "Enter PID to terminate: " pid
+        if [[ -z "$pid" || ! "$pid" =~ ^[0-9]+$ ]]; then
+            echo "Invalid PID."
+            return
+        fi
+
+        #to check if process exists
+        if ! ps -p "$pid" &>/dev/null; then
+            echo "Process $pid does not exist."
+            return
+        fi
+
+        #to check if critical
+        proc_name=$(ps -p "$pid" -o com=)
+        proc_user=$(ps -p "$pid" -o user=)
+        for crit in "${CRITICAL_NAMES[@]}"; do
+            if [[ "$proc_name" == *"$crit"* ]]; then
+                echo "WARNING: $proc_name (PID $pid) is a critical system process. Termination is not allowed."
+                log_action "Attempt to terminate critical process $pid ($proc_name) - BLOCKED"
+                return
+            fi
+
+        done
+
+        #If root-owned, ask extra confirmation
+        if [[ "$proc_name" == "root" ]]; then
+            read -p "Process is owned by root. Are you sure (Y/N): " confirm
+            if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+                echo "Termination cancelled."
+                return
+            fi
+        else
+            read -p "Terminate process $pid ($proc_name)? (Y/N): "confirm
+            if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+                echo "Termination cancelled."
+                return
+            fi
+        fi
+        kill "$pid" && echo "Process $pid terminated." || echo "Failed to terminate $pid."
+        log_action "Terminated process $pid ($proc_name)"
+    }
+

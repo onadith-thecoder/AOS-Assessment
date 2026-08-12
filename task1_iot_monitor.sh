@@ -73,5 +73,39 @@ log_action() {
         log_action "Terminated process $pid ($proc_name)"
     }
 
+## (b) Log File Management and Archival ##
+manage_logs() {
+    read -p "Enter directory to inspect (e.g., /var/log): " dir
+    if [[ ! -d "$dir" ]]; then
+        echo "Directory does not exist."
+        return
+    fi
 
+    echo "Disk usage of $dir:"
+    du -sh "$dir"
+    echo "Searching for log files >50MB...."
+    large_files=$(find "$dir" -type f -size +50M -name "*.log" 2>/dev/null)
+    if [[ -z "$large_files" ]]; then
+        echo "No log files >50MB found."
+        return
+    fi
+
+    echo "Found large log files:"
+    echo "$large_files"
+    mkdir -p "$ARCHIVE_DIR"
+    for f in $large_files; do
+        timestamps=$(data '+%Y%m%d_%H%M%S')
+        base=$(basename "$f")
+        archive_name="${ARCHIVE_DIR}/${base%.*}_${timestamp}.tar.gz"
+        tar -czf "$archive_name" "$f" && echo "Compressed $f -> $archive_name"
+        log_action "Compressed $f to $archive_name"
+    done
+
+    #Check archive size
+    archive_size=$(du -sb "$ARCHIVE_DIR" 2>/dev/null | cut -f1)
+    if [[ -n "$archive_size" && "$archive_size" -gt 1073741824 ]]; then #1gb in bytes
+        echo "WARNING: Archivelogs directory exceeds 1GB!"
+        log_action "WARNING: Archivelogs exceeds 1GB"
+    fi
+}
 

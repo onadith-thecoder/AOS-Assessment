@@ -38,3 +38,51 @@ add_job() {
         echo "Job added!"
 }
 
+#function: process queue acording to round robin 
+process_rr() {
+    if [[ ! -f "$QUEUE_FILE" || ! -s "$QUEUE_FILE" ]]; then
+        echo "The line is empty, nothing to do."
+        return
+    fi
+        echo "Processing with Round Robin (quantum=$TIME_QUANTUM s)..."
+
+        #this will read the queue in to array, and process until all done
+        declare -a jobs
+        mapfile -t jobs < "$QUEUE_FILE"
+
+        #Clear queue
+        > "$QUEUE_FILE"
+            local completed=()
+
+        #loop untill all jobs finished
+        while [[ ${#jobs[@]} -gt 0 ]]; do
+            for idx in "${!jobs[@]}"; do
+
+            IFS='|' read -r sid jdesc etime prio <<< "${jobs[$idx]}"
+                if (( etime <= TIME_QUANTUM )); then
+
+                # Job completes
+                echo "Job $jdesc (ID: $sid) completed (ran for $etime s)."
+                completed+=("$sid|$jdesc|$etime|$prior|completed_$(date '+%Y%m%d_%H%M%S')")
+                write_log "RR: Job $jdesc completed for $sid"
+                unset 'jobs[$idx]'
+            else
+                # Run for quantum then reduce time
+                let etime-=TIME_QUANTUM
+                echo "Job $jdesc (ID: $sid) ran for quantum, remaining $etime s."
+                jobs[$idx]="$sid|$jdesc|$etime|$prior"
+                write_log "RR: job $jdesc ran quantum, remaining $etime s"
+            fi
+        done
+        
+        #Re-index array
+        jobs=("${jobs[@]}")
+    done
+
+    #Append completed to completed file
+    for c in "${completed[@]}"; do
+        echo "$c" >> "$COMPLETED_FILE"
+        done
+
+        echo "All jobs processed."
+}

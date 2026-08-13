@@ -11,3 +11,14 @@ TIME_QUANTUM=5 #how many seconds each job gets per turn
 write_log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
 }
+
+#Show all jobs waiting in line
+show_Waiting_jobs() {
+    if [[ ! -f "$QUEUE_FILE" || ! -s "$QUEUE_FILE" ]]; then
+        echo "No waiting jobs. The line is empty!"
+    else
+        echo "Waiting Jobs in line (Format: StudentsID|JobName|ExecTime|Priority):"
+        cat "$QUEUE_FILE"
+    fi
+}
+

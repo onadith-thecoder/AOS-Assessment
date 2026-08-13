@@ -1,0 +1,145 @@
+2026-08-13 21:21:51 - New job added: 500|test onadi|300|1
+2026-08-13 21:22:31 - New job added: 400|test 2 onadith|300|5
+2026-08-13 21:23:13 - New job added: 300|test 3 onadith|150|10
+2026-08-13 21:23:48 - Ran (priority order): test onadi for 500
+2026-08-13 21:23:48 - Ran (priority order): test 2 onadith for 400
+2026-08-13 21:23:48 - Ran (priority order): test 3 onadith for 300
+2026-08-13 21:24:58 - New job added: test|h|100|1
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:01 - Turn taken: h now has 100 seconds left
+2026-08-13 21:25:34 - Ran (priority order): h for test
+2026-08-13 21:38:09 - New job added: job test|first|100|1
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:07 - Turn taken: first now has 100 seconds left
+2026-08-13 21:39:11 - Ran (priority order): first for job test
+2026-08-13 21:43:36 - Job submitted: 1|test1|100|1
+2026-08-13 21:43:52 - Job submitted: 2|test2|150|2
+2026-08-13 21:44:10 - Job submitted: 3|test3|200|10
+2026-08-13 21:44:55 - RR: Job test1 ran quantum, remaining 95 s
+2026-08-13 21:44:55 - RR: Job test2 ran quantum, remaining 145 s
+2026-08-13 21:44:55 - RR: Job test3 ran quantum, remaining 195 s
+2026-08-13 21:44:55 - RR: Job test1 ran quantum, remaining 90 s
+2026-08-13 21:44:55 - RR: Job test2 ran quantum, remaining 140 s
+2026-08-13 21:44:55 - RR: Job test3 ran quantum, remaining 190 s
+2026-08-13 21:44:55 - RR: Job test1 ran quantum, remaining 85 s
+2026-08-13 21:44:55 - RR: Job test2 ran quantum, remaining 135 s
+2026-08-13 21:44:55 - RR: Job test3 ran quantum, remaining 185 s
+2026-08-13 21:44:55 - RR: Job test1 ran quantum, remaining 80 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 130 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 180 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 75 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 125 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 175 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 70 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 120 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 170 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 65 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 115 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 165 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 60 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 110 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 160 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 55 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 105 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 155 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 50 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 100 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 150 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 45 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 95 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 145 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 40 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 90 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 140 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 35 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 85 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 135 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 30 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 80 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 130 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 25 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 75 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 125 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 20 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 70 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 120 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 15 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 65 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 115 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 10 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 60 s
+2026-08-13 21:44:56 - RR: Job test3 ran quantum, remaining 110 s
+2026-08-13 21:44:56 - RR: Job test1 ran quantum, remaining 5 s
+2026-08-13 21:44:56 - RR: Job test2 ran quantum, remaining 55 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 105 s
+2026-08-13 21:44:57 - RR: Job test1 completed for 1
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 50 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 100 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 45 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 95 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 40 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 90 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 35 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 85 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 30 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 80 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 25 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 75 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 20 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 70 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 15 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 65 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 10 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 60 s
+2026-08-13 21:44:57 - RR: Job test2 ran quantum, remaining 5 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 55 s
+2026-08-13 21:44:57 - RR: Job test2 completed for 2
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 50 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 45 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 40 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 35 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 30 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 25 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 20 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 15 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 10 s
+2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 5 s
+2026-08-13 21:44:57 - RR: Job test3 completed for 3

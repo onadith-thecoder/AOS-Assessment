@@ -40,6 +40,9 @@ add_job() {
 
 #function: process queue acording to round robin 
 process_rr() {
+
+    local TIME_QUANTUM="${TIME_QUANTUM:-5}" #default to 5s if not already set
+
     if [[ ! -f "$QUEUE_FILE" || ! -s "$QUEUE_FILE" ]]; then
         echo "The line is empty, nothing to do."
         return
@@ -109,7 +112,7 @@ process_priority() {
 show_finished_jobs() {
     if [[ ! -s "$COMPLETED_FILE" || ! -s "$COMPLETED_FILE" ]]; then
         echo "Nothing finished yet."
-    elsse
+    else
         echo "Finished jobs: "
         cat "$COMPLETED_FILE"
     fi
@@ -125,7 +128,7 @@ while true; do
     echo "(3) Process job queue by RR (Round Robin)"
     echo "(4) Process job queue by PS (Priority Scheduler)"
     echo "(5) Show Finished jobs"
-    echo (6) Exit
+    echo "(6) Exit"
 
     read -p "Pick an option from 1 to 6 : " opt
     case $opt in
@@ -133,7 +136,7 @@ while true; do
         (2) add_job ;;
         (3) process_rr ;;
         (4) process_priority ;;
-        (5) view_completed ;;
+        (5) show_finished_jobs ;;
         (6) read -p "Exit? (Y/N): " confirm
             if [[ "$confirm" =~ ^[Yy]$ ]]; then
              echo "Bye!!!"

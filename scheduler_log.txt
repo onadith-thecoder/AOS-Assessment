@@ -143,3 +143,160 @@
 2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 10 s
 2026-08-13 21:44:57 - RR: Job test3 ran quantum, remaining 5 s
 2026-08-13 21:44:57 - RR: Job test3 completed for 3
+2026-08-14 13:23:18 - job added: 1|ABC-1|100|1
+2026-08-14 13:23:33 - job added: 2|ABC-2|150|5
+2026-08-14 13:23:53 - job added: 3|ABC-3|300|10
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 95 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 145 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 295 s
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 90 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 140 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 290 s
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 85 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 135 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 285 s
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 80 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 130 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 280 s
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 75 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 125 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 275 s
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 70 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 120 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 270 s
+2026-08-14 13:26:39 - RR: job ABC-1 ran quantum, remaining 65 s
+2026-08-14 13:26:39 - RR: job ABC-2 ran quantum, remaining 115 s
+2026-08-14 13:26:39 - RR: job ABC-3 ran quantum, remaining 265 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 60 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 110 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 260 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 55 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 105 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 255 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 50 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 100 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 250 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 45 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 95 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 245 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 40 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 90 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 240 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 35 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 85 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 235 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 30 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 80 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 230 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 25 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 75 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 225 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 20 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 70 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 220 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 15 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 65 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 215 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 10 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 60 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 210 s
+2026-08-14 13:26:40 - RR: job ABC-1 ran quantum, remaining 5 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 55 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 205 s
+2026-08-14 13:26:40 - RR: Job ABC-1 completed for 1
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 50 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 200 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 45 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 195 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 40 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 190 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 35 s
+2026-08-14 13:26:40 - RR: job ABC-3 ran quantum, remaining 185 s
+2026-08-14 13:26:40 - RR: job ABC-2 ran quantum, remaining 30 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 180 s
+2026-08-14 13:26:41 - RR: job ABC-2 ran quantum, remaining 25 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 175 s
+2026-08-14 13:26:41 - RR: job ABC-2 ran quantum, remaining 20 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 170 s
+2026-08-14 13:26:41 - RR: job ABC-2 ran quantum, remaining 15 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 165 s
+2026-08-14 13:26:41 - RR: job ABC-2 ran quantum, remaining 10 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 160 s
+2026-08-14 13:26:41 - RR: job ABC-2 ran quantum, remaining 5 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 155 s
+2026-08-14 13:26:41 - RR: Job ABC-2 completed for 2
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 150 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 145 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 140 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 135 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 130 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 125 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 120 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 115 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 110 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 105 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 100 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 95 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 90 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 85 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 80 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 75 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 70 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 65 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 60 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 55 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 50 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 45 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 40 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 35 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 30 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 25 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 20 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 15 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 10 s
+2026-08-14 13:26:41 - RR: job ABC-3 ran quantum, remaining 5 s
+2026-08-14 13:26:41 - RR: Job ABC-3 completed for 3
+2026-08-14 13:27:34 - job added: 4|ABC-4|350|2
+2026-08-14 13:27:49 - job added: 5|ABC-5|400|6
+2026-08-14 13:28:01 - Priority: Job ABC-4 executed for 4 (prior 2)
+2026-08-14 13:28:01 - Priority: Job ABC-5 executed for 5 (prior 6)
+2026-08-14 13:28:16 - Exited scheduler
+2026-08-14 13:42:15 - Exited scheduler
+2026-08-14 13:42:55 - job added: 6|ABC-6|50|6
+2026-08-14 13:44:23 - job added: 7|ABC-7|100|4
+2026-08-14 13:45:14 - RR: job ABC-6 ran quantum, remaining 45 s
+2026-08-14 13:45:14 - RR: job ABC-7 ran quantum, remaining 95 s
+2026-08-14 13:45:14 - RR: job ABC-6 ran quantum, remaining 40 s
+2026-08-14 13:45:14 - RR: job ABC-7 ran quantum, remaining 90 s
+2026-08-14 13:45:14 - RR: job ABC-6 ran quantum, remaining 35 s
+2026-08-14 13:45:14 - RR: job ABC-7 ran quantum, remaining 85 s
+2026-08-14 13:45:14 - RR: job ABC-6 ran quantum, remaining 30 s
+2026-08-14 13:45:14 - RR: job ABC-7 ran quantum, remaining 80 s
+2026-08-14 13:45:15 - RR: job ABC-6 ran quantum, remaining 25 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 75 s
+2026-08-14 13:45:15 - RR: job ABC-6 ran quantum, remaining 20 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 70 s
+2026-08-14 13:45:15 - RR: job ABC-6 ran quantum, remaining 15 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 65 s
+2026-08-14 13:45:15 - RR: job ABC-6 ran quantum, remaining 10 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 60 s
+2026-08-14 13:45:15 - RR: job ABC-6 ran quantum, remaining 5 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 55 s
+2026-08-14 13:45:15 - RR: Job ABC-6 completed for 6
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 50 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 45 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 40 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 35 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 30 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 25 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 20 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 15 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 10 s
+2026-08-14 13:45:15 - RR: job ABC-7 ran quantum, remaining 5 s
+2026-08-14 13:45:15 - RR: Job ABC-7 completed for 7
+2026-08-14 13:48:10 - Exited scheduler
+2026-08-14 13:54:01 - job added: 8|ABC-8|300|3
+2026-08-14 13:54:17 - job added: 9|ABC-9|200|5
+2026-08-14 13:54:57 - Priority: Job ABC-8 executed for 8 (prior 3)
+2026-08-14 13:54:57 - Priority: Job ABC-9 executed for 9 (prior 5)
+2026-08-14 13:55:19 - Exited scheduler

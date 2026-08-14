@@ -87,6 +87,24 @@ process_rr() {
         echo "All jobs processed."
 }
 
+#function: process queue with Priority Scheduling
+process_priority() {
+    if [[ ! -f "$QUEUE_FILE" || ! -s "$QUEUE_FILE" ]]; then
+        echo "Queue is empty."
+        return
+    fi
+    echo "Processing with Priority Scheduling (1 highest)..."
+    #Sort by priority
+    sort -t'|' -k4n "$QUEUE_FILE" -o "$QUEUE_FILE"
+    while IFS='|' read -r sid jdesc etime prior; do
+        echo "Executing job $jdesc (ID: $sid) with priority $prior, duration $etime s."
+        write_log "Priority: Job $jdesc executed for $sid (prior $prior)"
+        echo "$sid|$jdesc|$etime|$prior|completed_$(date '+%Y%m%d_%H%M%S')" >> "$COMPLETED_FILE"
+    done < "$QUEUE_FILE"
+    > "$QUEUE_FILE"  # clear queue
+    echo "All jobs processed."
+}
+
 #function: show all the finished jobs
 show_finished_jobs() {
     if [[ ! -s "$COMPLETED_FILE" || ! -s "$COMPLETED_FILE" ]]; then
@@ -96,3 +114,32 @@ show_finished_jobs() {
         cat "$COMPLETED_FILE"
     fi
 }
+
+#***** Main Menu *****
+while true; do
+    echo ""
+    echo "________ Wellcome to________"
+    echo "*   Research Cluster Scheduler   *"
+    echo "(1) Show the Waiting jobs"
+    echo "(2) Add a new job"
+    echo "(3) Process job queue by RR (Round Robin)"
+    echo "(4) Process job queue by PS (Priority Scheduler)"
+    echo "(5) Show Finished jobs"
+    echo (6) Exit
+
+    read -p "Pick an option from 1 to 6 : " opt
+    case $opt in
+        (1) show_Waiting_jobs ;;
+        (2) add_job ;;
+        (3) process_rr ;;
+        (4) process_priority ;;
+        (5) view_completed ;;
+        (6) read -p "Exit? (Y/N): " confirm
+            if [[ "$confirm" =~ ^[Yy]$ ]]; then
+             echo "Bye!!!"
+             write_log "Exited scheduler"
+             exit 0
+            fi ;;
+        *) echo "Invalid." ;;
+    esac
+done

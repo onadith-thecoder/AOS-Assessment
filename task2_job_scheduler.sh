@@ -86,3 +86,13 @@ process_rr() {
 
         echo "All jobs processed."
 }
+
+#function: show all the finished jobs
+show_finished_jobs() {
+    if [[ ! -s "$COMPLETED_FILE" || ! -s "$COMPLETED_FILE" ]]; then
+        echo "Nothing finished yet."
+    elsse
+        echo "Finished jobs: "
+        cat "$COMPLETED_FILE"
+    fi
+}

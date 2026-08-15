@@ -30,4 +30,13 @@ submit_assignment() {
         log_message "FAILED SUBMISSION - file not found: $file_path"
         return
     fi
+
+    #to get the file name (without the folder path in front of it).
+    file_name=$(basename "$file_path")
+
+    #to get the file extention in lowercase.
+    extention="${file_name##*.}"
+    extention_lower=$(echo "$extention" | tr '[:upper:]' '[:lower:]')
+
+    
 }

@@ -18,3 +18,16 @@ write_log() {
     timestamp=$(date "+%Y-%m-%d %H:%M:%S")
     echo "[$timestamp] $message" >> "$LOG_FILE"
 }
+
+#Submit an Assignment
+submit_assignment() {
+    echo ""
+    read -rp "Enter the full path of the file you want to submit: " file_path
+
+    #checking process - file exists on the computer?
+    if [ ! -f "$file_path" ]; then
+        echo "ERROR: that file does't exist. Plz check the path and try again later!"
+        log_message "FAILED SUBMISSION - file not found: $file_path"
+        return
+    fi
+}

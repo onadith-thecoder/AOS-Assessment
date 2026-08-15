@@ -53,5 +53,13 @@ submit_assignment() {
         return
     fi
 
+    #Rule for reject duplicate submissions (same file name or same content)
+    file_hash=$(md5sum "$file_path" | awk '{print $1}') #md5sum method for create a fingerprint of the content for each file
     
+    #this will look through log file for previous accepted submissions with the same file name and same content (fingerprint)
+    if grep -q "ACCEPTED - '$file_name' - hash:$file_hash" "$LOG_FILE"; then
+        echo "ERROR: Duplicate (this file has already been submited before)."
+        write_log "REJECTED - '$file_name' - duplicatesubmission (hash:$file_hash)"
+        returs
+    fi
 }

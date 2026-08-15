@@ -27,7 +27,7 @@ submit_assignment() {
     #checking process - file exists on the computer?
     if [ ! -f "$file_path" ]; then
         echo "ERROR: that file does't exist. Plz check the path and try again later!"
-        log_message "FAILED SUBMISSION - file not found: $file_path"
+        write_log "FAILED SUBMISSION - file not found: $file_path"
         return
     fi
 
@@ -35,8 +35,15 @@ submit_assignment() {
     file_name=$(basename "$file_path")
 
     #to get the file extention in lowercase.
-    extention="${file_name##*.}"
-    extention_lower=$(echo "$extention" | tr '[:upper:]' '[:lower:]')
+    extension="${file_name##*.}"
+    extension_lower=$(echo "$extension" | tr '[:upper:]' '[:lower:]')
+
+    #Rule for allowed file formats.
+    if [ "$extension_lower" != "pdf" ] && [ "$extension_lower" != "docx" ]; then
+        echo "ERROR: Only .pdf and .docx files are accepted."
+        write_log "REJECTED - '$file_name' - invalid file type (.$extension_lower)"
+        return
+    fi
 
     
 }

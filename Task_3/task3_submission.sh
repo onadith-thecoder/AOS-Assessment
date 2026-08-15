@@ -62,4 +62,9 @@ submit_assignment() {
         write_log "REJECTED - '$file_name' - duplicatesubmission (hash:$file_hash)"
         returs
     fi
+
+    #if everything ok then; copy the file in to submission folder
+    cp "$file_path" "$SUBMISSION_FOLDER/$file_name"
+        echo "DONE: '$file_name' has been successfully submitted.
+        write_log "ACCEPTED - '$file_name' - hash:$file_hash - size:${file_size}bytes"
 }

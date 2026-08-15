@@ -45,5 +45,13 @@ submit_assignment() {
         return
     fi
 
+    #Rule for maximum file size.
+    file_size=$(start -c%$ "$file_path" 2>/dev/null || stat -f%z "$file_path")
+    if [ "$file_size" -gt "$MAX_SIZE_BYTES" ]; then
+        echo "ERROR: File size is too large. Max Allowed size is 5MB!"
+        write_log "REJECTED - '$file_name' : is too large ($file_size bytes)"
+        return
+    fi
+
     
 }

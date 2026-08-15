@@ -19,6 +19,7 @@ write_log() {
     echo "[$timestamp] $message" >> "$LOG_FILE"
 }
 
+#(01)
 #Submit an Assignment
 submit_assignment() {
     echo ""
@@ -26,7 +27,7 @@ submit_assignment() {
 
     #checking process - file exists on the computer?
     if [ ! -f "$file_path" ]; then
-        echo "ERROR: that file does't exist. Plz check the path and try again later!"
+        echo "ERROR: that file doesn't exist. Plz check the path and try again later!"
         write_log "FAILED SUBMISSION - file not found: $file_path"
         return
     fi
@@ -46,25 +47,26 @@ submit_assignment() {
     fi
 
     #Rule for maximum file size.
-    file_size=$(start -c%$ "$file_path" 2>/dev/null || stat -f%z "$file_path")
+    file_size=$(stat -c%s "$file_path" 2>/dev/null || stat -f%z "$file_path")
     if [ "$file_size" -gt "$MAX_SIZE_BYTES" ]; then
         echo "ERROR: File size is too large. Max Allowed size is 5MB!"
         write_log "REJECTED - '$file_name' : is too large ($file_size bytes)"
         return
     fi
 
-    #Rule for reject duplicate submissions (same file name or same content)
+    #Rule for reject duplicate submissions (same file name or same content(hash))
     file_hash=$(md5sum "$file_path" | awk '{print $1}') #md5sum method for create a fingerprint of the content for each file
     
     #this will look through log file for previous accepted submissions with the same file name and same content (fingerprint)
     if grep -q "ACCEPTED - '$file_name' - hash:$file_hash" "$LOG_FILE"; then
-        echo "ERROR: Duplicate (this file has already been submited before)."
-        write_log "REJECTED - '$file_name' - duplicatesubmission (hash:$file_hash)"
-        returs
+        echo "ERROR: Duplicate (this file has already been submitted before)."
+        write_log "REJECTED - '$file_name' - duplicat esubmission (hash:$file_hash)"
+        return
     fi
 
-    #if everything ok then; copy the file in to submission folder
+    #if everything is ok then; copy the file in to submission folder
     cp "$file_path" "$SUBMISSION_FOLDER/$file_name"
-        echo "DONE: '$file_name' has been successfully submitted.
-        write_log "ACCEPTED - '$file_name' - hash:$file_hash - size:${file_size}bytes"
+        echo "DONE: '$file_name' has been successfully submitted."
+        write_log "ACCEPTED - '$file_name' - hash:$file_hash - size:${file_size} bytes"
+    
 }

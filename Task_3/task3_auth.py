@@ -77,3 +77,37 @@ suspicious = False
             suspicious = True
     #update last attempt time to right now, for next time check
     account["last_attempt_time"] = now.strftime("%Y-%m-%p %H:%M:%S")
+
+#(03)
+#Checking process - username exists & passwor is correct
+if username not in VALID_USERS or VALID_USERS[username] != password:
+    
+    #wrong username or wrong password counting as a failed attempt
+    account["failed_attempts"] += 1
+
+    if account["failed_attempts"] >= MAX_FAILED_ATTEMPTS:
+        account["locked"] = True
+        message = "LOGIN FAILED!!! Accont is now locked, you tried more thatn 3 attempts."
+    else:
+        remaining = MAX_FAILED_ATTEMPTS - account["failed_attempts"]
+        message = f"LOGIN FAILED!!! Incorrect username or password, {remaining} attempt(s) left."
+    
+    if suspicious:
+        message += " [SUSPICIOUS: repeated attempts within 60 seconds]"
+
+        log_attempt(username, message)
+        save_accounts_status(accounts_status)
+        return message
+
+#(04)
+#A correct login resets the failed attempt counter back to 0
+account["failed_attempts"] = 0
+message = "LOGIN SUCCESSFUL!!! Welcome, " + username + "."
+
+if suspicious:
+    message += "[SUSPICIOUS: repeated attempts within 60 seconds]"
+
+    log_attempt(username, message)
+    save_accounts_status(accounts_status)
+    return message
+

@@ -97,3 +97,13 @@ list_submission() {
 
 #(04)
 #function: for simulate a login attempt
+simulate_login() {
+    echo ""
+    read -rp "Enter Username: " username
+    read -rsp "Enter Password: " password
+    echo "" #this willmove to a new line right after the hidden password input
+
+    #this will check all credentials correct, then writing them to login_log.txt as well.
+    python3 task3_auth.py "$username" "$password"
+}
+

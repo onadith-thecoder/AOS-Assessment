@@ -68,5 +68,18 @@ submit_assignment() {
     cp "$file_path" "$SUBMISSION_FOLDER/$file_name"
         echo "DONE: '$file_name' has been successfully submitted."
         write_log "ACCEPTED - '$file_name' - hash:$file_hash - size:${file_size} bytes"
-    
 }
+
+#(02)
+#Checking proccess for already submited files
+check_submission() {
+    echo ""
+    read -rp "Enter Your File Name to Check (With extension): " file_name
+
+    if grep -q "Accepted - '$file_name' - hash: " "$LOG_FILE"; then
+        echo "YES - '$file_name' has already been submitted."
+    else
+        echo "NO - '$file_name' has not been submitted yet."
+    fi
+}
+

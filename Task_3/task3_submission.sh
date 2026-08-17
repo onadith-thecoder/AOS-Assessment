@@ -107,3 +107,15 @@ simulate_login() {
     python3 task3_auth.py "$username" "$password"
 }
 
+#(05)
+#function for Exit with Confirmation
+exit_system() {
+    echo ""
+    read -rp "Are you sure you want to exit ? (Y/N): " confirm
+    if [ "$confirm" == "y" ] || [ "$confirm" == "y" ]; then
+        echo "Goodbye !!!"
+        exit 0
+    else
+        echo "Exit Cancelled. Directing to Main Menu."
+    fi
+}

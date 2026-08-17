@@ -83,3 +83,17 @@ check_submission() {
     fi
 }
 
+#(03)
+#function: for list all submitted assignments
+list_submission() {
+    echo ""
+    echo "==== SUBMITTED ASSIGNMENTS ===="
+    if [ -z "$(ls -A "$SUBMISSION_FOLDER" 2>/dev/null)" ]; then
+        echo "No Assignments have been submitted yet."
+    else
+        ls -1 "$SUBMISSION_FOLDER"
+    fi
+}
+
+#(04)
+#function: for simulate a login attempt

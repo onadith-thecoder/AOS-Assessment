@@ -4,7 +4,7 @@
 import json
 import os
 import sys
-form datetime import datetime
+from datetime import datetime
 
 #To remeber things between runs - log files
 LOGIN_LOG_FILE = "login_log.txt"
@@ -13,9 +13,9 @@ ACCOUNTS_FILE = "accounts_status.json" #this will specially remember fail counts
 #Demo list for Valid Student Accounts (for simulation only)
 #because here i dont use database...
 VALID_USERS = {
-    "student1": "password123"
-    "student2": "password456"
-    "student3": "password789"
+    "student1": "password123",
+    "student2": "password456",
+    "student3": "password789",
 }
 
 MAX_FAILED_ATTEMPTS = 3         #after this may wrong passwords in a row, lock the account
@@ -23,7 +23,7 @@ SUSPICIOUS_WINDOW_SECONDS = 60  #attempts faster than this -> suspicious
 
 def load_account_status():
     """Read the accounts_status.json file (creates it if it doesn't exist yet)."""
-    if not os.path.exist(ACCOUNTS_FILE):
+    if not os.path.exists(ACCOUNTS_FILE):
         return {}
     try:
         with open(ACCOUNTS_FILE, "r") as f:
@@ -59,53 +59,53 @@ def simulate_login(username, password):
         }
     account = accounts_status[username]
 
-#(01)
-#Checking process - Account already locked
-if account["locked"]:
-    message = "ACCOUNT LOCKED !!!"
-    log_attempt(username, message)
-    save_accounts_status(accounts_status)
-    return message
+    #(01)
+    #Checking process - Account already locked
+    if account["locked"]:
+        message = "ACCOUNT LOCKED !!!"
+        log_attempt(username, message)
+        save_accounts_status(accounts_status)
+        return message
 
-#(02)
-#Checking process - Suspicious speed of repeated attempts
-suspicious = False
+    #(02)
+    #Checking process - Suspicious speed of repeated attempts
+    suspicious = False
     if account["last_attempt_time"] is not None:
-        last_time = datetime.strptime(account["last_attempt_time"], "%Y-%m-%p %H:%M:%S")
+        last_time = datetime.strptime(account["last_attempt_time"], "%Y-%m-%d %H:%M:%S")
         seconds_since_last_attempt = (now - last_time).total_seconds()
         if seconds_since_last_attempt < SUSPICIOUS_WINDOW_SECONDS:
             suspicious = True
     #update last attempt time to right now, for next time check
-    account["last_attempt_time"] = now.strftime("%Y-%m-%p %H:%M:%S")
+    account["last_attempt_time"] = now.strftime("%Y-%m-%d %H:%M:%S")
 
-#(03)
-#Checking process - username exists & passwor is correct
-if username not in VALID_USERS or VALID_USERS[username] != password:
-    
-    #wrong username or wrong password counting as a failed attempt
-    account["failed_attempts"] += 1
+    #(03)
+    #Checking process - username exists & password is correct
+    if username not in VALID_USERS or VALID_USERS[username] != password:
 
-    if account["failed_attempts"] >= MAX_FAILED_ATTEMPTS:
-        account["locked"] = True
-        message = "LOGIN FAILED!!! Accont is now locked, you tried more thatn 3 attempts."
-    else:
-        remaining = MAX_FAILED_ATTEMPTS - account["failed_attempts"]
-        message = f"LOGIN FAILED!!! Incorrect username or password, {remaining} attempt(s) left."
-    
-    if suspicious:
-        message += " [SUSPICIOUS: repeated attempts within 60 seconds]"
+        #wrong username or wrong password counting as a failed attempt
+        account["failed_attempts"] += 1
+
+        if account["failed_attempts"] >= MAX_FAILED_ATTEMPTS:
+            account["locked"] = True
+            message = "LOGIN FAILED!!! Account is now locked, you tried more than 3 attempts."
+        else:
+            remaining = MAX_FAILED_ATTEMPTS - account["failed_attempts"]
+            message = f"LOGIN FAILED!!! Incorrect username or password, {remaining} attempt(s) left."
+
+        if suspicious:
+            message += " [SUSPICIOUS: repeated attempts within 60 seconds]"
 
         log_attempt(username, message)
         save_accounts_status(accounts_status)
         return message
 
-#(04)
-#A correct login resets the failed attempt counter back to 0
-account["failed_attempts"] = 0
-message = "LOGIN SUCCESSFUL!!! Welcome, " + username + "."
+    #(04)
+    #A correct login resets the failed attempt counter back to 0
+    account["failed_attempts"] = 0
+    message = "LOGIN SUCCESSFUL!!! Welcome, " + username + "."
 
-if suspicious:
-    message += "[SUSPICIOUS: repeated attempts within 60 seconds]"
+    if suspicious:
+        message += " [SUSPICIOUS: repeated attempts within 60 seconds]"
 
     log_attempt(username, message)
     save_accounts_status(accounts_status)

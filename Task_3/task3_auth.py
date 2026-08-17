@@ -36,3 +36,26 @@ def save_accounts_status(status_data):
     """Save the accounts_status.json file back to disk."""
     with open(ACCOUNTS_FILE, "w") as f:
         json.dump(status_data, f, indent=4)
+
+def log_attempt(username, result_message):
+    """Write one line to login_log.txt every time someone tries to log in. it will always include the date & time, it's will helped as a audit"""
+
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(LOGIN_LOG_FILE, "a") as f:
+        f.write(f"[{timestamp}] Username: {username} -> {result_message}\n")
+
+def simulate_login(username, password):
+    """This is the main function. run & checks everything and return a message to the user"""
+
+    accounts_status = load_account_status()
+    now = datetime.now()
+
+    #if new username occured, this will set up a new record of it.
+    if username not in accounts_status:
+        accounts_status[username] = {
+            "failed_attempts": 0,
+            "locked": False,
+            "last_attempt_time": None,
+        }
+    account = accounts_status[username]
+

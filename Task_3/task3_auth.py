@@ -18,6 +18,21 @@ VALID_USERS = {
     "student3": "password789"
 }
 
-MAX_FAILED_ATTEMPTS = 3         # after this may wrong passwords in a row, lock the account
-SUSPICIOUS_WINDOW_SECONDS = 60  # attempts faster than this -> suspicious
+MAX_FAILED_ATTEMPTS = 3         #after this may wrong passwords in a row, lock the account
+SUSPICIOUS_WINDOW_SECONDS = 60  #attempts faster than this -> suspicious
 
+def load_account_status():
+    """Read the accounts_status.json file (creates it if it doesn't exist yet)."""
+    if not os.path.exist(ACCOUNTS_FILE):
+        return {}
+    try:
+        with open(ACCOUNTS_FILE, "r") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, ValueError):
+        #if the file got corrupted somehow, possible to start fresh instead of crashing
+        return {}
+
+def save_accounts_status(status_data):
+    """Save the accounts_status.json file back to disk."""
+    with open(ACCOUNTS_FILE, "w") as f:
+        json.dump(status_data, f, indent=4)

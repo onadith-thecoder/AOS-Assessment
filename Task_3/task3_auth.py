@@ -59,3 +59,21 @@ def simulate_login(username, password):
         }
     account = accounts_status[username]
 
+#(01)
+#Checking process - Account already locked
+if account["locked"]:
+    message = "ACCOUNT LOCKED !!!"
+    log_attempt(username, message)
+    save_accounts_status(accounts_status)
+    return message
+
+#(02)
+#Checking process - Suspicious speed of repeated attempts
+suspicious = False
+    if account["last_attempt_time"] is not None:
+        last_time = datetime.strptime(account["last_attempt_time"], "%Y-%m-%p %H:%M:%S")
+        seconds_since_last_attempt = (now - last_time).total_seconds()
+        if seconds_since_last_attempt < SUSPICIOUS_WINDOW_SECONDS:
+            suspicious = True
+    #update last attempt time to right now, for next time check
+    account["last_attempt_time"] = now.strftime("%Y-%m-%p %H:%M:%S")

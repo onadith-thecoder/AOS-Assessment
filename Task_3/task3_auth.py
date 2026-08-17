@@ -111,3 +111,14 @@ if suspicious:
     save_accounts_status(accounts_status)
     return message
 
+if __name__ == "__main__":
+    #this script able to run directly from terminal or called by the bash menu like; python3 task3_auth.py <username> <password>
+    if len(sys.argv) != 3:
+        print("Usage: python3 task3_auth.py <username> <password>")
+        sys.exit(1)
+
+    entered_username = sys.argv[1]
+    entered_password = sys.argv[2]
+
+    result = simulate_login(entered_username, entered_password)
+    print(result)

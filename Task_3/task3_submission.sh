@@ -119,3 +119,28 @@ exit_system() {
         echo "Exit Cancelled. Directing to Main Menu."
     fi
 }
+
+#************** Main Menu **************
+
+while true; do
+    echo ""
+    echo "--------------------------------------------------------------"
+    echo " * Wellcome to Project Submission and Authentication System * "
+    echo "--------------------------------------------------------------"
+        echo "(1) Submit an Assignment"
+        echo "(2) Check if a file has Already been Submitted"
+        echo "(3) List all Submitted Assignments"
+        echo "(4) Simulate Login Attempt"
+        echo "(5) Exit"
+    echo "--------------------------------------------------------------"
+    read -rp "Choose an option (1-5): " choice
+
+    case "$choice" in
+        (1) submit_assignment ;;
+        (2) check_submission ;;
+        (3) list_submission ;;
+        (4) simulate_login ;;
+        (5) exit_system ;;
+        (*) echo "Invalid option. Please choose a number between 1 and 5." ;;
+    esac
+done

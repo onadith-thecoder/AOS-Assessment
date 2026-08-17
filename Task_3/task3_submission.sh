@@ -76,7 +76,7 @@ check_submission() {
     echo ""
     read -rp "Enter Your File Name to Check (With extension): " file_name
 
-    if grep -q "Accepted - '$file_name' - hash: " "$LOG_FILE"; then
+    if grep -q "ACCEPTED - '$file_name' - hash:" "$LOG_FILE"; then
         echo "YES - '$file_name' has already been submitted."
     else
         echo "NO - '$file_name' has not been submitted yet."
@@ -112,7 +112,7 @@ simulate_login() {
 exit_system() {
     echo ""
     read -rp "Are you sure you want to exit ? (Y/N): " confirm
-    if [ "$confirm" == "y" ] || [ "$confirm" == "y" ]; then
+    if [ "$confirm" == "y" ] || [ "$confirm" == "Y" ]; then
         echo "Goodbye !!!"
         exit 0
     else

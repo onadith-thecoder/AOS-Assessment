@@ -300,3 +300,27 @@
 2026-08-14 13:54:57 - Priority: Job ABC-8 executed for 8 (prior 3)
 2026-08-14 13:54:57 - Priority: Job ABC-9 executed for 9 (prior 5)
 2026-08-14 13:55:19 - Exited scheduler
+2026-08-18 16:00:13 - job added: hashen|AOS1|100|1
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 95 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 90 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 85 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 80 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 75 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 70 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 65 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 60 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 55 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 50 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 45 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 40 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 35 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 30 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 25 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 20 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 15 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 10 s
+2026-08-18 16:01:55 - RR: job AOS1 ran quantum, remaining 5 s
+2026-08-18 16:01:55 - RR: Job AOS1 completed for hashen
+2026-08-18 16:04:04 - job added: kalana|AOS2|300|10
+2026-08-18 16:04:14 - Priority: Job AOS2 executed for kalana (prior 10)
+2026-08-18 16:04:56 - Exited scheduler

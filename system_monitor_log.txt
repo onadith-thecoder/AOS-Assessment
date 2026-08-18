@@ -6,3 +6,11 @@
 2026-08-d% 13:12:32 - Displayed CPU and memory usage
 2026-08-d% 13:12:40 - Listed top 10 memory processes
 2026-08-d% 13:22:38 - Exited system
+2026-08-d% 14:38:37 - Displayed CPU and memory usage
+2026-08-d% 14:38:38 - Listed top 10 memory processes
+2026-08-d% 14:53:56 - Terminated process 21922 (sleep)
+2026-08-d% 14:55:41 - Exited system
+2026-08-18 15:36:47 - Compressed test_logs/bigfile.log to ArchiveLogs/bigfile_.tar.gz
+2026-08-18 15:39:03 - Listed top 10 memory processes
+2026-08-18 15:39:06 - Displayed CPU and memory usage
+2026-08-18 15:44:12 - Exited system

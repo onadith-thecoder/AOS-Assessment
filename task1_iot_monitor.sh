@@ -8,7 +8,7 @@ CRITICAL_NAMES=("systemd" "init" "sshd" "cron" "kernel" "kthreadd")
 
 #log action function - Record all administrative actions with timestamps
 log_action() {
-    echo "$(date '+%Y-%m-d% %H:%M:%S') - $1" >> "$LOG_FILE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
 }
 
 ## (a) Process monitoring and management ## 
@@ -44,7 +44,7 @@ log_action() {
         fi
 
         #to check if critical
-        proc_name=$(ps -p "$pid" -o com=)
+        proc_name=$(ps -p "$pid" -o comm=)
         proc_user=$(ps -p "$pid" -o user=)
         for crit in "${CRITICAL_NAMES[@]}"; do
             if [[ "$proc_name" == *"$crit"* ]]; then
@@ -56,7 +56,7 @@ log_action() {
         done
 
         #If root-owned, ask extra confirmation
-        if [[ "$proc_name" == "root" ]]; then
+        if [[ "$proc_user" == "root" ]]; then
             read -p "Process is owned by root. Are you sure (Y/N): " confirm
             if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
                 echo "Termination cancelled."
@@ -94,7 +94,7 @@ manage_logs() {
     echo "$large_files"
     mkdir -p "$ARCHIVE_DIR"
     for f in $large_files; do
-        timestamps=$(data '+%Y%m%d_%H%M%S')
+        timestamps=$(date '+%Y%m%d_%H%M%S')
         base=$(basename "$f")
         archive_name="${ARCHIVE_DIR}/${base%.*}_${timestamp}.tar.gz"
         tar -czf "$archive_name" "$f" && echo "Compressed $f -> $archive_name"

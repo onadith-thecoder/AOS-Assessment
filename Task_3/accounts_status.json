@@ -3,5 +3,10 @@
         "failed_attempts": 0,
         "locked": false,
         "last_attempt_time": "2026-08-18 02:01:39"
+    },
+    "student3": {
+        "failed_attempts": 0,
+        "locked": false,
+        "last_attempt_time": "2026-08-18 16:14:23"
     }
 }

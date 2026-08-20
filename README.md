@@ -76,7 +76,7 @@ A hybrid Python + Bash implementation of a user authentication and file submissi
 
         File	                        Role
 task3_auth.py       :-	Python script handling user login, credential verification, and account state management
-task3_submission.sh :-	Bash script that manages the submission workflow — validating, processing, and logging file submissions
+task3_submission.sh :-	Bash script that manages the submission workflow - validating, processing, and logging file submissions
 accounts_status.json:-	JSON data store tracking the status of each user account (active, locked, etc.)
 login_log.txt       :-	Timestamped log of every authentication attempt (success and failure)
 submission_log.txt  :-	Timestamped log of all submission events processed by task3_submission.sh
@@ -117,7 +117,7 @@ test_logs/                  :-	Logs produced during development and testing phas
 -Prerequisites
 -Linux-based operating system (Ubuntu recommended)
 -Bash shell (bash --version ≥ 4.x)
--Python 3 (python3 --version) — required for Task 3
+-Python 3 (python3 --version) - required for Task 3
 -Standard GNU coreutils (awk, grep, top, df, free, ps)
 -Execute permissions on the scripts
 
@@ -150,6 +150,6 @@ python3 Task_3/task3_auth.py
 ## Author
 
 **Venuka Onadith**
-B.Eng (Hons) Software Engineering Undergraduate — CCCU via Saegis Campus
+B.Eng (Hons) Software Engineering Undergraduate - CCCU via Saegis Campus
 [GitHub](https://github.com/onadith-thecoder) · [Portfolio](https://venuka-onadith.vercel.app)
 
